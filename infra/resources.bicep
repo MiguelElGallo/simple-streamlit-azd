@@ -58,7 +58,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2021-03-01' = {
   location: location
   tags: tags
   sku: {
-    name: 'P2V3'
+    name: 'F1'
   }
   properties: {
     reserved: true
