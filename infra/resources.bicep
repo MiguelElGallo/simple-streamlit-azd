@@ -10,7 +10,7 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
   properties: {
     serverFarmId: appServicePlan.id
     siteConfig: {
-      linuxFxVersion: 'PYTHON:|3.11'
+      linuxFxVersion: 'PYTHON|3.11'
       ftpsState: 'Disabled'
     }
     httpsOnly: true
