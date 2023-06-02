@@ -6,7 +6,7 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
   name: 'web-${resourceToken}'
   location: location
   tags: union(tags, { 'azd-service-name': 'web' })
-  kind: 'app,linux'
+  kind: 'app'
   properties: {
     serverFarmId: appServicePlan.id
     siteConfig: {
@@ -58,7 +58,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2021-03-01' = {
   tags: tags
   kind: 'linux'
   sku: {
-    name: 'F1'
+    name: 'B1'
   }
 }
 
