@@ -6,7 +6,7 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
   name: 'web-${resourceToken}'
   location: location
   tags: union(tags, { 'azd-service-name': 'web' })
-  kind: 'app'
+  kind: 'app,linux'
   properties: {
     serverFarmId: appServicePlan.id
     siteConfig: {
@@ -15,7 +15,6 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
     }
     httpsOnly: true
   }
-
   identity: {
     type: 'SystemAssigned'
   }
@@ -51,16 +50,15 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
     }
   }
 }
-
-resource appServicePlan 'Microsoft.Web/serverfarms@2021-03-01' = {
+resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: 'app-${resourceToken}'
   location: location
-  tags: tags
-  kind: 'linux'
   sku: {
-    name: 'B1'
+    name: 'S1'
+  }
+  kind: 'linux'
+  properties: {
+    reserved: true
   }
 }
-
-
 output WEB_URI string = 'https://${web.properties.defaultHostName}'
