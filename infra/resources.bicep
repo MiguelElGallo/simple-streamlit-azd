@@ -10,12 +10,11 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
   properties: {
     serverFarmId: appServicePlan.id
     siteConfig: {
-      linuxFxVersion: 'PYTHON:3.11'
+      linuxFxVersion: 'PYTHON|3.11'
       ftpsState: 'Disabled'
     }
     httpsOnly: true
   }
-
   identity: {
     type: 'SystemAssigned'
   }
@@ -51,16 +50,15 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
     }
   }
 }
-
-resource appServicePlan 'Microsoft.Web/serverfarms@2021-03-01' = {
+resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: 'app-${resourceToken}'
   location: location
-  tags: tags
-  kind: 'linux'
   sku: {
-    name: 'F1'
+    name: 'S1'
+  }
+  kind: 'linux'
+  properties: {
+    reserved: true
   }
 }
-
-
 output WEB_URI string = 'https://${web.properties.defaultHostName}'
