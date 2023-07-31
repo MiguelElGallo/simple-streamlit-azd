@@ -1,10 +1,11 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
 
-name: simple-flask-webapp
+name: simple-streamlit-webapp
 metadata:
-  template: simple-flask-webapp@0.0.1-beta
+  template: simple-stremamlit-webapp@0.0.1-beta
 services:
   web:
     project: src/
     language: py
     host: appservice
+    requirements: requirements.txt

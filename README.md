@@ -1,6 +1,6 @@
-# Simple Flask AZD Template
+# Simple Streamlit AZD Template
 
-The most basic Flask "hello world" application as an AZD template ready for Azure App Service
+The most basic streamlit "hello world" application as an AZD template ready for Azure App Service
 
 ![system diagram](diagram.png)
 
@@ -9,7 +9,7 @@ The most basic Flask "hello world" application as an AZD template ready for Azur
 1. Install AZD and run the following command to initialize the project.
 
 ```bash
-azd init --template tonybaloney/simple-flask-azd
+azd init --template MiguelElGallo/simple-streamlit-azd
 ```
 
 This command will clone the code to your current folder and prompt you for the following information:

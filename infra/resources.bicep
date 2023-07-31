@@ -2,6 +2,8 @@ param location string
 param resourceToken string
 param tags object
 
+ 
+
 resource web 'Microsoft.Web/sites@2022-03-01' = {
   name: 'web-${resourceToken}'
   location: location
@@ -12,6 +14,7 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
     siteConfig: {
       linuxFxVersion: 'PYTHON|3.11'
       ftpsState: 'Disabled'
+      appCommandLine: 'python -m streamlit run app/streamlit_app.py --server.port 8000 --server.address 0.0.0.0'
     }
     httpsOnly: true
   }
@@ -61,4 +64,6 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
     reserved: true
   }
 }
+
+
 output WEB_URI string = 'https://${web.properties.defaultHostName}'
