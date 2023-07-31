@@ -1,6 +1,7 @@
 # code from https://docs.streamlit.io/library/get-started/create-an-app
 
 import altair as alt
+import numpy as np
 import pandas as pd
 import streamlit as st
 from vega_datasets import data
