@@ -25,7 +25,7 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
   resource appSettings 'config' = {
     name: 'appsettings'
     properties: {
-      SCM_DO_BUILD_DURING_DEPLOYMENT: 'false'
+      SCM_DO_BUILD_DURING_DEPLOYMENT: 'true'
       ENABLE_ORYX_BUILD: 'true'
     }
   }
