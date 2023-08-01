@@ -14,7 +14,7 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
     siteConfig: {
       linuxFxVersion: 'PYTHON|3.9'
       ftpsState: 'Disabled'
-      appCommandLine: '/home/site/wwwroot/startup.sh'
+      appCommandLine: 'startup.sh'
     }
     httpsOnly: true
   }
