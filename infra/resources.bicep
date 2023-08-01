@@ -14,7 +14,7 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
     siteConfig: {
       linuxFxVersion: 'PYTHON|3.9'
       ftpsState: 'Disabled'
-      appCommandLine: 'python -m streamlit run stlitapp.py --server.port 8000 --server.address 0.0.0.0'
+      appCommandLine: 'python3.9 -m streamlit run stlitapp.py --server.port 8000 --server.address 0.0.0.0'
     }
     httpsOnly: true
   }
