@@ -12,7 +12,7 @@ resource web 'Microsoft.Web/sites@2022-03-01' = {
   properties: {
     serverFarmId: appServicePlan.id
     siteConfig: {
-      linuxFxVersion: 'PYTHON|3.11'
+      linuxFxVersion: 'PYTHON|3.9'
       ftpsState: 'Disabled'
       appCommandLine: 'python -m streamlit run stlitapp.py --server.port 8000 --server.address 0.0.0.0'
     }
