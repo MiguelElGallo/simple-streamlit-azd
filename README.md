@@ -37,3 +37,5 @@ This uses the F1 (free) SKU for app service, which has limited CPU and RAM resou
 See the [pricing calculator](https://azure.microsoft.com/en-au/pricing/calculator/) for details on paid SKUs replace the SKU option with a suitable choice.
 
 Based on the this [great template:](https://github.com/tonybaloney/simple-flask-azd)
+
+Added support for `azd pipeline config`, enabling creation of CI/CD pipeline for GitHub Actions. Note this is still a [beta](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/configure-devops-pipeline?tabs=GitHub) feature in AZD. 
