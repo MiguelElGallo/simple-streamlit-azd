@@ -1,10 +1,11 @@
-# Basic set up for three package managers
-
 version: 2
 updates:
-
-  # Maintain dependencies for GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  groups:
+    python-packages:
+      patterns:
+        - "*"
