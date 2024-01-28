@@ -17,4 +17,5 @@ jobs:
         uses: github/evergreen@v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: MiguelElGallo/simple-streamlit-azd
           
